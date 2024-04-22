@@ -15,10 +15,10 @@ let givenWisdom = []
 //Iterate over the collectiveWisdom object 
 for(let prop in collectiveWisdom) {
     let optionIdx = generateRandomNumber(collectiveWisdom[prop].length)
-}
+
 
 //Object's properties to be used to generate customized messages and being pushed to the givenWisdom array
-switch(prop) {
+switch (prop) {
     case 'signInfo':
         givenWisdom.push(`Your sign right now is "${collectiveWisdom[prop][optionIdx]}".`)
         break
@@ -27,6 +27,15 @@ switch(prop) {
         break
     case 'advice':
         givenWisdom.push(`You should: "${collectiveWisdom[prop][optionIdx]}".`)
+        break
     default:
         givenWisdom.push("There is not enough info.")
 }
+}
+
+const formatWisdom = wisdom => {
+    const formatted = givenWisdom.join('\n')
+    console.log(formatted)
+}
+
+formatWisdom(givenWisdom)
